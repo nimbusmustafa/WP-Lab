@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conference Registration Form</title>
+</head>
+<body>
+    <h1 style="text-align: center;">Conference Registration Form</h1>
+    <form action="/submit" method="post" enctype="multipart/form-data" style="width: 600px; margin: 0 auto;">
+        <!-- Participant Details -->
+        <fieldset>
+            <legend><strong>Participant Details</strong></legend>
+            <p>
+                <label for="fullName">Full Name:</label><br>
+                <input type="text" id="fullName" name="fullName" placeholder="Enter your full name" required>
+            </p>
+            <p>
+                <label for="email">Email:</label><br>
+                <input type="email" id="email" name="email" placeholder="example@domain.com" required>
+            </p>
+            <p>
+                <label for="phone">Phone Number:</label><br>
+                <input type="tel" id="phone" name="phone" pattern="\d{10}" placeholder="10-digit number" required>
+            </p>
+            <p>
+                <label for="age">Age:</label><br>
+                <input type="number" id="age" name="age" min="18" max="60" required>
+            </p>
+        </fieldset>
+
+        <br>
+
+        <!-- Event Preferences -->
+        <fieldset>
+            <legend><strong>Event Preferences</strong></legend>
+            <p>
+                <label for="events">Select up to two events:</label><br>
+                <select id="events" name="events[]" multiple size="5" required>
+                    <option value="Coding Contest">Coding Contest</option>
+                    <option value="Hackathon">Hackathon</option>
+                    <option value="Paper Presentation">Paper Presentation</option>
+                    <option value="Robotics Challenge">Robotics Challenge</option>
+                    <option value="Keynote Session">Keynote Session</option>
+                </select>
+            </p>
+            <p>
+                <small>Hold Ctrl (Windows) or Command (Mac) to select multiple options.</small>
+            </p>
+        </fieldset>
+
+        <br>
+
+        <!-- Accommodation Details -->
+        <fieldset>
+            <legend><strong>Accommodation Details</strong></legend>
+            <p>
+                <label>Select Accommodation Type:</label><br>
+                <input type="radio" id="hostel" name="accommodation" value="Hostel" required>
+                <label for="hostel">Hostel</label><br>
+                <input type="radio" id="hotel" name="accommodation" value="Hotel" required>
+                <label for="hotel">Hotel</label><br>
+                <input type="radio" id="none" name="accommodation" value="None" required>
+                <label for="none">None</label>
+            </p>
+        </fieldset>
+
+        <br>
+
+        <!-- Dietary Preferences -->
+        <fieldset>
+            <legend><strong>Dietary Preferences</strong></legend>
+            <p>
+                <input type="checkbox" id="vegetarian" name="dietary[]" value="Vegetarian">
+                <label for="vegetarian">Vegetarian</label>
+            </p>
+            <p>
+                <input type="checkbox" id="nonVegetarian" name="dietary[]" value="Non-Vegetarian">
+                <label for="nonVegetarian">Non-Vegetarian</label>
+            </p>
+            <p>
+                <input type="checkbox" id="vegan" name="dietary[]" value="Vegan">
+                <label for="vegan">Vegan</label>
+            </p>
+            <p>
+                <input type="checkbox" id="otherDiet" name="dietary[]" value="Other" onclick="toggleOtherDietInput(this)">
+                <label for="otherDiet">Other (Specify below)</label>
+            </p>
+            <p>
+                <input type="text" id="otherDietText" name="otherDietText" placeholder="Specify here" disabled>
+            </p>
+        </fieldset>
+
+        <br>
+
+        <!-- Additional Info -->
+        <fieldset>
+            <legend><strong>Additional Info</strong></legend>
+            <p>
+                <label for="upload">Upload Student ID (PDF only, max 5 MB):</label><br>
+                <input type="file" id="upload" name="upload" accept=".pdf" required>
+            </p>
+            <p>
+                <label for="comments">Comments/Requests:</label><br>
+                <textarea id="comments" name="comments" placeholder="Write your comments here (optional)" maxlength="300" rows="5" cols="50"></textarea>
+            </p>
+        </fieldset>
+
+        <br>
+
+        <!-- Consent and Submission -->
+        <fieldset>
+            <legend><strong>Consent and Submission</strong></legend>
+            <p>
+                <input type="checkbox" id="terms" name="terms" required>
+                <label for="terms">I agree to the terms and conditions</label>
+            </p>
+            <p>
+                <button type="submit">Submit</button>
+                <button type="reset">Reset</button>
+            </p>
+        </fieldset>
+    </form>
+
+    <script>
+        function toggleOtherDietInput(checkbox) {
+            const otherDietText = document.getElementById('otherDietText');
+            otherDietText.disabled = !checkbox.checked;
+        }
+    </script>
+</body>
+</html>
