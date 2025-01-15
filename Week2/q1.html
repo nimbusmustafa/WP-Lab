@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Bio-Data Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            width: 50%;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            text-align: center;
+            color: #333;
+        }
+
+        label {
+            font-size: 14px;
+            color: #333;
+            display: block;
+            margin: 10px 0 5px;
+        }
+
+        input[type="text"], input[type="email"], input[type="number"], input[type="date"], select {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 14px;
+        }
+
+        input[type="radio"], input[type="checkbox"] {
+            margin: 0 5px;
+        }
+
+        .form-section {
+            margin-bottom: 20px;
+        }
+
+        .table-section table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        .table-section table, .table-section th, .table-section td {
+            border: 1px solid #ccc;
+        }
+
+        .table-section th, .table-section td {
+            padding: 8px;
+            text-align: left;
+        }
+
+        .submit-btn {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .submit-btn:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h2>Student Bio-Data Form</h2>
+        <form action="#">
+            <div class="form-section">
+                <label for="fullName">Full Name:</label>
+                <input type="text" id="fullName" name="fullName" placeholder="Enter your full name" required>
+            </div>
+
+            <div class="form-section">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" placeholder="Enter your email" required>
+            </div>
+
+            <div class="form-section">
+                <label for="dob">Date of Birth:</label>
+                <input type="date" id="dob" name="dob" required>
+            </div>
+
+            <div class="form-section">
+                <label for="gender">Gender:</label>
+                <input type="radio" id="male" name="gender" value="Male">
+                <label for="male">Male</label>
+                <input type="radio" id="female" name="gender" value="Female">
+                <label for="female">Female</label>
+            </div>
+
+            <div class="form-section">
+                <label for="hobbies">Hobbies:</label>
+                <input type="checkbox" id="reading" name="hobbies" value="Reading">
+                <label for="reading">Reading</label>
+                <input type="checkbox" id="sports" name="hobbies" value="Sports">
+                <label for="sports">Sports</label>
+                <input type="checkbox" id="music" name="hobbies" value="Music">
+                <label for="music">Music</label>
+            </div>
+
+            <div class="table-section">
+                <label for="address">Address:</label>
+                <table>
+                    <tr>
+                        <th>Street</th>
+                        <th>City</th>
+                        <th>Zip Code</th>
+                    </tr>
+                    <tr>
+                        <td><input type="text" name="street" placeholder="Enter street" required></td>
+                        <td><input type="text" name="city" placeholder="Enter city" required></td>
+                        <td><input type="text" name="zip" placeholder="Enter zip code" required></td>
+                    </tr>
+                </table>
+            </div>
+
+            <div class="form-section">
+                <button type="submit" class="submit-btn">Submit</button>
+            </div>
+        </form>
+    </div>
+
+</body>
+</html>

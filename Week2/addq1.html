@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Train Ticket Booking - Mumbai Railways</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            background: #f0f8ff;
+            padding: 50px 0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .form-container {
+            background: #fff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+            width: 400px;
+            max-width: 100%;
+        }
+
+        h1 {
+            text-align: center;
+            font-size: 28px;
+            margin-bottom: 20px;
+            color: #2c3e50;
+        }
+
+        label {
+            font-size: 16px;
+            color: #34495e;
+            margin-bottom: 8px;
+            display: block;
+        }
+
+        input, select, button {
+            width: 100%;
+            padding: 12px;
+            margin: 8px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+            background-color: #f9f9f9;
+        }
+
+        input:focus, select:focus, button:focus {
+            outline: none;
+            border-color: #3498db;
+        }
+
+        button {
+            background-color: #3498db;
+            color: white;
+            cursor: pointer;
+            border: none;
+            font-size: 18px;
+        }
+
+        button:hover {
+            background-color: #2980b9;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-footer {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .form-footer a {
+            color: #3498db;
+            text-decoration: none;
+        }
+
+        .form-footer a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="form-container">
+        <h1>Mumbai Railways</h1>
+        <form action="#" method="POST">
+            <!-- Source Station -->
+            <div class="form-group">
+                <label for="source">Source</label>
+                <select id="source" name="source" required>
+                    <option value="mumbai-central">Mumbai Central</option>
+                    <option value="dadar">Dadar</option>
+                    <option value="andheri">Andheri</option>
+                    <option value="borivali">Borivali</option>
+                    <option value="vileparle">Vile Parle</option>
+                </select>
+            </div>
+
+            <!-- Destination Station -->
+            <div class="form-group">
+                <label for="destination">Destination</label>
+                <select id="destination" name="destination" required>
+                    <option value="mumbai-central">Mumbai Central</option>
+                    <option value="dadar">Dadar</option>
+                    <option value="andheri">Andheri</option>
+                    <option value="borivali">Borivali</option>
+                    <option value="vileparle">Vile Parle</option>
+                </select>
+            </div>
+
+            <!-- Travel Date -->
+            <div class="form-group">
+                <label for="date">Date of Journey</label>
+                <input type="date" id="date" name="date" required>
+            </div>
+
+            <!-- Train Type -->
+            <div class="form-group">
+                <label for="train-type">Train Type</label>
+                <select id="train-type" name="train-type" required>
+                    <option value="fast">Fast</option>
+                    <option value="slow">Slow</option>
+                    <option value="express">Express</option>
+                    <option value="local">Local</option>
+                </select>
+            </div>
+
+            <!-- Passengers -->
+            <div class="form-group">
+                <label for="passengers">No. of Passengers</label>
+                <input type="number" id="passengers" name="passengers" min="1" required>
+            </div>
+
+            <!-- Submit Button -->
+            <button type="submit">Book Ticket</button>
+        </form>
+
+        <div class="form-footer">
+            <p>Need help? <a href="#">Contact Support</a></p>
+        </div>
+    </div>
+
+</body>
+</html>
