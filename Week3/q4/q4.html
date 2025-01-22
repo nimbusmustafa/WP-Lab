@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Color Change Example</title>
+    <style>
+        .container {
+            width: 300px;
+            height: 200px;
+            margin-top: 20px;
+            border: 1px solid #000;
+        }
+
+        .color-options {
+            margin-top: 20px;
+        }
+
+        .color-box {
+            width: 50px;
+            height: 50px;
+            margin-top: 10px;
+            cursor: pointer;
+        }
+
+        /* Stack radio buttons vertically */
+        label {
+            display: block;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Radio buttons stacked vertically -->
+    <div class="color-options">
+        <label>
+            <input type="radio" name="color" value="red"> Red
+        </label>
+        <label>
+            <input type="radio" name="color" value="green"> Green
+        </label>
+        <label>
+            <input type="radio" name="color" value="blue"> Blue
+        </label>
+    </div>
+
+    <!-- Color boxes below the radio buttons -->
+
+
+    <!-- Container to change color -->
+    <div class="container" id="colorContainer"></div>
+
+    <script>
+        // Select radio buttons, color boxes, and the container
+        const radioButtons = document.querySelectorAll('input[name="color"]');
+        const colorBoxes = document.querySelectorAll('.color-box');
+        const colorContainer = document.getElementById('colorContainer');
+
+        // Change container color when a radio button is clicked
+        radioButtons.forEach(button => {
+            button.addEventListener('change', function() {
+                if (this.checked) {
+                    colorContainer.style.backgroundColor = this.value;
+                }
+            });
+        });
+
+        // Change container color when a color box is clicked
+        colorBoxes.forEach(box => {
+            box.addEventListener('click', function() {
+                const color = this.getAttribute('data-color');
+                colorContainer.style.backgroundColor = color;
+                // Automatically check the corresponding radio button
+                document.querySelector(`input[name="color"][value="${color}"]`).checked = true;
+            });
+        });
+    </script>
+
+</body>
+</html>
