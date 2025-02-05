@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Table and Image Animation</title>
+    <style>
+        /* Basic styles for table and image */
+        table {
+            width: 300px;
+            border-collapse: collapse;
+            margin: 50px;
+            position: relative;
+        }
+
+        td {
+            padding: 10px;
+            border: 1px solid #ddd;
+            text-align: center;
+        }
+
+        /* Alternate row color styling */
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+
+        tr:nth-child(odd) {
+            background-color: #fff;
+        }
+
+        img {
+            width: 200px;
+            height: 200px;
+            margin-top: 50px;
+            position: relative;
+        }
+
+        /* Container for both table and image to move them together */
+        #container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Button styling */
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            margin-top: 20px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="container">
+        <table>
+            <tr>
+                <td>Row 1, Col 1</td>
+                <td>Row 1, Col 2</td>
+                <td>Row 1, Col 3</td>
+            </tr>
+            <tr>
+                <td>Row 2, Col 1</td>
+                <td>Row 2, Col 2</td>
+                <td>Row 2, Col 3</td>
+            </tr>
+            <tr>
+                <td>Row 3, Col 1</td>
+                <td>Row 3, Col 2</td>
+                <td>Row 3, Col 3</td>
+            </tr>
+        </table>
+        <img src="images.jpeg" alt="Placeholder Image">
+    </div>
+
+    <button onclick="moveTableAndImage()">Move Left</button>
+
+    <script>
+        let position = 0;  // Initial position for the movement
+
+        function moveTableAndImage() {
+            const container = document.getElementById('container');
+            position -= 50; // Move more to the left on each click
+            container.style.transform = 'translateX(' + position + 'px)';
+        }
+    </script>
+
+</body>
+</html>
