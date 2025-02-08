@@ -119,8 +119,11 @@
             <input type="checkbox" id="laptop" value="Laptop"> Laptop
         </div>
 
-        <label for="quantity">Enter Quantity:</label>
-        <input type="text" id="quantity" placeholder="Enter Quantity" />
+        <label for="mobileQuantity">Enter Mobile Quantity:</label>
+        <input type="text" id="mobileQuantity" placeholder="Enter Quantity for Mobile" disabled/>
+
+        <label for="laptopQuantity">Enter Laptop Quantity:</label>
+        <input type="text" id="laptopQuantity" placeholder="Enter Quantity for Laptop" disabled/>
 
         <button id="produceBill">Produce Bill</button>
 
@@ -134,27 +137,43 @@
                 'Laptop': 800   // Price for laptop
             };
 
+            // Enable the quantity fields based on checkbox selection
+            $('#mobile').change(function() {
+                if ($(this).prop('checked')) {
+                    $('#mobileQuantity').prop('disabled', false);
+                } else {
+                    $('#mobileQuantity').prop('disabled', true);
+                }
+            });
+
+            $('#laptop').change(function() {
+                if ($(this).prop('checked')) {
+                    $('#laptopQuantity').prop('disabled', false);
+                } else {
+                    $('#laptopQuantity').prop('disabled', true);
+                }
+            });
+
             $('#produceBill').click(function() {
                 let totalAmount = 0;
-                let quantity = parseInt($('#quantity').val());
+                let mobileQuantity = parseInt($('#mobileQuantity').val());
+                let laptopQuantity = parseInt($('#laptopQuantity').val());
 
                 // Reset error message
                 $('#error-message').hide();
 
-                // Validate the quantity input
-                if (isNaN(quantity) || quantity <= 0) {
-                    $('#error-message').text('Please enter a valid quantity.').show();
+                // Validate the quantities
+                if ((mobileQuantity && isNaN(mobileQuantity)) || (laptopQuantity && isNaN(laptopQuantity))) {
+                    $('#error-message').text('Please enter valid quantities.').show();
                     return;
                 }
 
-                // Check if Mobile is selected and calculate total
-                if ($('#mobile').prop('checked')) {
-                    totalAmount += prices['Mobile'] * quantity;
+                if ($('#mobile').prop('checked') && mobileQuantity > 0) {
+                    totalAmount += prices['Mobile'] * mobileQuantity;
                 }
 
-                // Check if Laptop is selected and calculate total
-                if ($('#laptop').prop('checked')) {
-                    totalAmount += prices['Laptop'] * quantity;
+                if ($('#laptop').prop('checked') && laptopQuantity > 0) {
+                    totalAmount += prices['Laptop'] * laptopQuantity;
                 }
 
                 // If no products are selected
