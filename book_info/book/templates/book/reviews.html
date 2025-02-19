@@ -1,0 +1,37 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ice Age: Sid's World - Reviews</title>
+    <link rel="stylesheet" href="{% static 'book/styles.css' %}">
+</head>
+<body>
+    <div class="book-info-container">
+        <h1>Ice Age: Sid's World - Reviews</h1>
+
+        <div class="review">
+            <p><strong>John Doe, Children's Book Critic:</strong></p>
+            <p>"A delightful adventure that brings Sid's quirky personality to life! Perfect for kids who enjoy humor and light-hearted stories."</p>
+            <p><strong>Rating:</strong> ⭐⭐⭐⭐☆</p>
+        </div>
+        
+        <div class="review">
+            <p><strong>Jane Smith, Parent and Blogger:</strong></p>
+            <p>"My kids absolutely loved reading about Sid's adventures. A fun-filled book with lovable characters."</p>
+            <p><strong>Rating:</strong> ⭐⭐⭐⭐⭐</p>
+        </div>
+
+        <div class="review">
+            <p><strong>Sam Brown, Ice Age Enthusiast:</strong></p>
+            <p>"A charming extension to the Ice Age universe, with Sid's antics and humor at the forefront. Fans of the movies will adore it!"</p>
+            <p><strong>Rating:</strong> ⭐⭐⭐⭐☆</p>
+        </div>
+
+        <div class="nav-links">
+            <a href="{% url 'home' %}">Back to Home</a>
+        </div>
+    </div>
+</body>
+</html>

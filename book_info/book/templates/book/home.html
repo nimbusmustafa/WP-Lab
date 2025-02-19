@@ -1,0 +1,24 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ice Age: Sid's World - Home</title>
+    <link rel="stylesheet" href="{% static 'book/styles.css' %}">
+</head>
+<body>
+    <div class="book-info-container">
+        <h1>Ice Age: Sid's World</h1>
+        <img src="{% static 'book/book_cover.jpg' %}" alt="Ice Age Sid's World Book Cover" class="book-cover">
+        
+        <p>Welcome to the world of Sid the Sloth! Explore the book's metadata, reviews, and publisher information below:</p>
+
+        <div class="nav-links">
+            <a href="{% url 'metadata' %}">Book Metadata</a>
+            <a href="{% url 'reviews' %}">Reviews</a>
+            <a href="{% url 'publisher' %}">Publisher Info</a>
+        </div>
+    </div>
+</body>
+</html>

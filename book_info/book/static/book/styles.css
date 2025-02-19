@@ -1,0 +1,56 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f0f8ff;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    text-align: center;
+    color: #2a5d84;
+}
+
+.book-info-container {
+    width: 80%;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #ffffff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+.book-cover {
+    width: 100%;
+    max-width: 300px;
+    display: block;
+    margin: 20px auto;
+    border-radius: 8px;
+}
+
+.nav-links {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #2a5d84;
+    font-weight: bold;
+    margin: 0 10px;
+}
+
+.nav-links a:hover {
+    text-decoration: underline;
+}
+
+.review {
+    background-color: #f4f4f4;
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 15px;
+}
+
+.review p {
+    margin: 5px 0;
+}

@@ -1,0 +1,26 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ice Age: Sid's World - Metadata</title>
+    <link rel="stylesheet" href="{% static 'book/styles.css' %}">
+</head>
+<body>
+    <div class="book-info-container">
+        <h1>Ice Age: Sid's World - Metadata</h1>
+        <ul>
+            <li><strong>Author:</strong> Sid the Sloth (fictional)</li>
+            <li><strong>Genre:</strong> Children's Fiction, Adventure</li>
+            <li><strong>Pages:</strong> 250 pages</li>
+            <li><strong>Publication Date:</strong> May 1, 2024</li>
+            <li><strong>ISBN:</strong> 978-1-23456-789-0</li>
+        </ul>
+
+        <div class="nav-links">
+            <a href="{% url 'home' %}">Back to Home</a>
+        </div>
+    </div>
+</body>
+</html>

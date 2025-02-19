@@ -1,0 +1,24 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ice Age: Sid's World - Publisher Info</title>
+    <link rel="stylesheet" href="{% static 'book/styles.css' %}">
+</head>
+<body>
+    <div class="book-info-container">
+        <h1>Ice Age: Sid's World - Publisher Info</h1>
+        
+        <p><strong>Publisher:</strong> Frozen Time Publishing</p>
+        <p><strong>Address:</strong> 123 Ice Age Road, Snowy Valley, 98765</p>
+        <p><strong>Website:</strong> <a href="https://frozentimebooks.com">FrozenTimeBooks.com</a></p>
+        <p><strong>Email:</strong> <a href="mailto:contact@frozentimebooks.com">contact@frozentimebooks.com</a></p>
+
+        <div class="nav-links">
+            <a href="{% url 'home' %}">Back to Home</a>
+        </div>
+    </div>
+</body>
+</html>
