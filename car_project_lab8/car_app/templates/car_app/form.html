@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Car Form</title>
+    {% load static %}
+    <style>
+        body {
+            background-image: url("{% static 'car_app/car_wallpaper1.jpeg' %}");
+            background-size: cover;
+            background-position: center;
+            font-family: Arial, sans-serif;
+            color: white;
+            text-align: center;
+            padding-top: 50px;
+        }
+        .form-container {
+            background-color: rgba(0, 0, 0, 0.5);
+            padding: 30px;
+            border-radius: 10px;
+            display: inline-block;
+        }
+        h2 {
+            font-size: 2em;
+        }
+        select, input, button {
+            font-size: 1.2em;
+            padding: 10px;
+            margin: 10px 0;
+            width: 200px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+        button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <div class="form-container">
+        <h2>Select Car Manufacturer</h2>
+        <form method="POST">
+            {% csrf_token %}
+            <label for="manufacturer">Car Manufacturer:</label><br>
+            <select name="manufacturer" id="manufacturer">
+                {% for manufacturer in car_manufacturers %}
+                    <option value="{{ manufacturer }}">{{ manufacturer }}</option>
+                {% endfor %}
+            </select><br><br>
+
+            <label for="model">Car Model:</label><br>
+            <input type="text" name="model" id="model" required><br><br>
+
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+</body>
+</html>
