@@ -1,0 +1,20 @@
+{% extends 'directory/base.html' %}
+
+{% block title %}Pages in {{ category.name }}{% endblock %}
+
+{% block content %}
+<div class="card shadow-sm p-4">
+    <h2 class="text-center mb-4">Pages in {{ category.name }}</h2>
+    <ul class="list-group">
+        {% for page in pages %}
+            <li class="list-group-item d-flex justify-content-between align-items-center">
+                <a href="{{ page.url }}" class="text-decoration-none">{{ page.title }}</a>
+                <span class="badge bg-info text-dark">Views: {{ page.views }}</span>
+            </li>
+        {% endfor %}
+    </ul>
+    <div class="text-center mt-4">
+        <a href="{% url 'category_list' %}" class="btn btn-secondary">Back to Categories</a>
+    </div>
+</div>
+{% endblock %}
