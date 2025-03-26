@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vote for the Book</title>
+    {% load static %}
+
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+</head>
+<body>
+    <div class="container">
+        <h1>How is the book "ASP.NET with C#" by Vipul Prakashan?</h1>
+        
+        <form method="POST">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit" class="vote-button">Vote</button>
+        </form>
+
+        <p>Your opinion matters! Please select one of the options and click "Vote".</p>
+    </div>
+</body>
+</html>

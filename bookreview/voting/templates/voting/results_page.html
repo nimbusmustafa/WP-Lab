@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vote Results</title>
+    {% load static %}
+
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+</head>
+<body>
+    <div class="container">
+        <h1>Vote Results</h1>
+        <div class="result">
+            <h3>Good: {{ results.good|floatformat:2 }}%</h3>
+            <h3>Satisfactory: {{ results.satisfactory|floatformat:2 }}%</h3>
+            <h3>Bad: {{ results.bad|floatformat:2 }}%</h3>
+        </div>
+
+        <p><a href="{% url 'vote' %}" class="back-button">Back to Vote Page</a></p>
+        
+        <!-- Reset Votes Button -->
+        <form method="POST" action="{% url 'reset_votes' %}">
+            {% csrf_token %}
+            <button type="submit" class="reset-button">Reset Votes</button>
+        </form>
+    </div>
+</body>
+</html>
