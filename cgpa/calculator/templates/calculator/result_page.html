@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CGPA Result</title>
+    {% load static %}
+
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+</head>
+<body>
+    <div class="container">
+        <h1>Result</h1>
+        
+        <p>Name: {{ name }}</p>
+        <p>CGPA: {{ cgpa }}</p>
+
+        <a href="{% url 'input' %}">Go Back</a>
+    </div>
+</body>
+</html>
