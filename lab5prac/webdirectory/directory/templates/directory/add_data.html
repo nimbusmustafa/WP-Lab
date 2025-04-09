@@ -1,0 +1,10 @@
+<h1>Add Category and Page</h1>
+
+<form method="post">
+    {% csrf_token %}
+    {{ cat_form.as_p }}
+    {{ page_form.as_p }}
+    <button type="submit">Submit</button>
+</form>
+
+<br><a href="{% url 'home' %}">Back to Home</a>

@@ -1,0 +1,10 @@
+<h1>Issued Books</h1>
+<ul>
+    {% for issue in issues %}
+        <li>{{ issue.book.title }} issued to {{ issue.borrower.name }} on {{ issue.issue_date }}</li>
+    {% endfor %}
+</ul>
+
+<a href="{% url 'add_book' %}">Add Book</a><br>
+<a href="{% url 'add_borrower' %}">Add Borrower</a><br>
+<a href="{% url 'issue_book' %}">Issue Book</a>

@@ -1,0 +1,7 @@
+<h2>All Rooms</h2>
+<ul>
+    {% for room in rooms %}
+        <li>{{ room.category }} - {{ room.status }}</li>
+    {% endfor %}
+</ul>
+<a href="{% url 'home' %}">Back to Home</a>
